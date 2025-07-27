@@ -8,33 +8,40 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* UG Brand Colors */
+    --moonlight: 120 6% 88%;           /* #E1E2E1 - Backgrounds, cards */
+    --midnight-sky: 210 24% 29%;       /* #34495E - Secondary text, outlines */
+    --deep-ocean: 210 65% 27%;         /* #1B3B6F - Headings, buttons, icons */
+    --noir: 210 65% 11%;               /* #0D1B2A - Primary text, footers */
+    
+    /* Design System Mapping */
+    --background: 120 6% 98%;          /* Light version of moonlight */
+    --foreground: 210 65% 11%;         /* Noir */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 120 6% 96%;                /* Moonlight variant */
+    --card-foreground: 210 65% 11%;    /* Noir */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 120 6% 98%;
+    --popover-foreground: 210 65% 11%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 210 65% 27%;            /* Deep Ocean */
+    --primary-foreground: 120 6% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 120 6% 88%;           /* Moonlight */
+    --secondary-foreground: 210 65% 11%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 120 6% 88%;               /* Moonlight */
+    --muted-foreground: 210 24% 29%;   /* Midnight Sky */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 210 65% 27%;             /* Deep Ocean */
+    --accent-foreground: 120 6% 98%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 120 6% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 24% 29% / 0.2;       /* Midnight Sky with opacity */
+    --input: 210 24% 29% / 0.1;        /* Midnight Sky with light opacity */
+    --ring: 210 65% 27%;               /* Deep Ocean */
 
     --radius: 0.5rem;
 
@@ -100,6 +107,24 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
   }
+}
+
+/* Custom UG Brand Colors */
+@layer utilities {
+  .text-moonlight { color: hsl(var(--moonlight)); }
+  .text-midnight-sky { color: hsl(var(--midnight-sky)); }
+  .text-deep-ocean { color: hsl(var(--deep-ocean)); }
+  .text-noir { color: hsl(var(--noir)); }
+  
+  .bg-moonlight { background-color: hsl(var(--moonlight)); }
+  .bg-midnight-sky { background-color: hsl(var(--midnight-sky)); }
+  .bg-deep-ocean { background-color: hsl(var(--deep-ocean)); }
+  .bg-noir { background-color: hsl(var(--noir)); }
+  
+  .border-moonlight { border-color: hsl(var(--moonlight)); }
+  .border-midnight-sky { border-color: hsl(var(--midnight-sky)); }
+  .border-deep-ocean { border-color: hsl(var(--deep-ocean)); }
+  .border-noir { border-color: hsl(var(--noir)); }
 }
